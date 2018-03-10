@@ -3,6 +3,8 @@ package sistema;
 
 import ambiente.*;
 
+import java.util.Random;
+
 /**
  *
  * @author tacla
@@ -29,11 +31,16 @@ public class Agente {
         //
         // Para encerrar o ciclo de deliberação do agente, não escolha nenhuma
         // ação e retorne -1 (assim o programa encerra)
-        
-        if (ct > 2) 
+
+        Random rn = new Random();
+        int dir = rn.nextInt(8);       //pode ser um rand
+        executarIr(dir);
+
+        if (ct > 4)
             return -1;
         
         return 1;
+
     }
     
     /**Funciona como um driver ou um atuador: envia o comando para
